@@ -1,0 +1,22 @@
+{
+  "name": "manutsmart-real",
+  "version": "1.0.0",
+  "description": "Sistema real de ordens de serviço com fluxo Funcionário -> Líder -> Técnico.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.3",
+    "express-rate-limit": "^7.4.1",
+    "express-session": "^1.18.1",
+    "helmet": "^7.1.0",
+    "nodemailer": "^6.9.15"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
