@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManutSmart | Sistema de Serviços</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">MS</div>
+        <div>
+          <strong>ManutSmart</strong>
+          <span>Sistema de Serviços</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav"></nav>
+
+      <div class="user-card hidden" id="userCard">
+        <div class="avatar" id="userInitial">U</div>
+        <div>
+          <strong id="userName">Usuário</strong>
+          <span id="userRole">Função</span>
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <div>
+          <h1 id="pageTitle">Entrar</h1>
+          <p id="pageSubtitle">Acesse sua conta cadastrada.</p>
+        </div>
+        <button class="ghost hidden" id="logoutBtn">Sair</button>
+      </header>
+
+      <section id="toast" class="toast hidden"></section>
+
+      <section id="authView" class="auth-grid">
+        <div class="panel auth-panel">
+          <div class="tabs">
+            <button class="tab active" data-auth-tab="login">Login</button>
+            <button class="tab" data-auth-tab="register">Cadastro</button>
+          </div>
+
+          <form id="loginForm" class="form auth-tab-content active">
+            <label>Email</label>
+            <input type="email" name="email" autocomplete="email" placeholder="seuemail@empresa.com" required>
+            <label>Senha</label>
+            <input type="password" name="password" autocomplete="current-password" placeholder="Sua senha" required>
+            <button type="submit" class="primary">Entrar</button>
+            <p class="hint">A entrada só é liberada para contas já cadastradas.</p>
+          </form>
+
+          <form id="registerForm" class="form auth-tab-content">
+            <label>Nome completo</label>
+            <input type="text" name="name" autocomplete="name" placeholder="Nome do usuário" required>
+            <label>Email</label>
+            <input type="email" name="email" autocomplete="email" placeholder="seuemail@empresa.com" required>
+            <label>Senha</label>
+            <input type="password" name="password" autocomplete="new-password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+            <label>Função</label>
+            <select name="role" required>
+              <option value="funcionario">Funcionário</option>
+              <option value="lider">Líder</option>
+              <option value="tecnico">Técnico</option>
+            </select>
+            <label>Área</label>
+            <select name="area">
+              <option value="administrativo">Administrativo</option>
+              <option value="coordenacao">Coordenação</option>
+              <option value="eletrica">Elétrica</option>
+              <option value="hidraulica">Hidráulica</option>
+              <option value="alvenaria">Alvenaria</option>
+              <option value="jardinagem">Jardinagem</option>
+            </select>
+            <button type="submit" class="primary">Cadastrar</button>
+            <p class="hint">Após cadastrar, use o mesmo email e senha para entrar.</p>
+          </form>
+        </div>
+      </section>
+
+      <section id="dashboardView" class="hidden">
+        <div class="stats-grid" id="statsGrid"></div>
+        <div id="roleContent"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
